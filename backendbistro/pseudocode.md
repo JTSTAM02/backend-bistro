@@ -55,32 +55,35 @@
         location = models.ForeignKey(CASCADE?)
 
         def __str__(self):
-            return self.text
+            return self.title
 
     class Cuisine(models.Model):
         type = models.CharField(max_length = 100)
 
         def __str__(self):
-            return self.text
+            return self.type
 
 
     class Category(models.Model):
         type = models.CharField(max_length = 100)
 
         def __str__(self):
-            return self.text
+            return self.type
 
 
     class Locations(models.Model):
         name = models.CharField(max_length=200)
-        
+
         def __str__(self):
-            return self.text
+            return self.name
 
 ## Views (actual Python functions to be implemented)
 
-    - def all_menu_items(request)
+from django.http import JsonResponse
+
+    - def get_menu_items(request)
         menu_items = MenuItem.object.all()
+        data = []
         for item in menu_items:
             data.append({
                 "id": item.id,
@@ -101,7 +104,7 @@
     - /breakfast
     - /lunch
     - /dinner
-    - appetizers
+    - /appetizers
 
 
 ## Database Schema/Table Relationships
@@ -114,5 +117,8 @@
 
     - Each table has specific columns (see MoSCoW)
     - see (https://dbdiagram.io/d/64c15c9802bd1c4a5ebffe5e)
+
+    ![diagram] (/Users/tylerstamm/Desktop/Database Diagram-Backend Bistro.png)
+
 
         
