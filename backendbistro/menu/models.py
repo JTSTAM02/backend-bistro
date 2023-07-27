@@ -1,5 +1,29 @@
 from django.db import models
 
+
+#------------------------------Category Class---------------------------------------------------
+class Category(models.Model):
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
+
+#-------------------------------Cuisine Class---------------------------------------------------
+class Cuisine(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+
+#-------------------------------Locations Class---------------------------------------------------
+class Location(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+
 #------------------------------Menu_Items Class---------------------------------------------------
 class Menu_Items(models.Model):
     title = models.CharField(max_length=200)
@@ -13,16 +37,7 @@ class Menu_Items(models.Model):
     def __str__(self):
         return self.title
 
-#------------------------------Category Class---------------------------------------------------
-class Category(models.Model):
-    name = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
     
 
-class Cuisine(models.Model):
-    name = models.CharField(max_length=100)
 
-    def __str__(self):
-        return self.name
