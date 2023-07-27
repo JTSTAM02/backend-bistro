@@ -1,6 +1,6 @@
-from django.views import get_menu_items
 from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('menu_items/', get_menu_items, name='menu_items'),
+    path('get_menu_items/', views.get_menu_items, name='get_menu_items'),
 ]
