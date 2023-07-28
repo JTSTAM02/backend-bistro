@@ -31,7 +31,7 @@ class Menu_Items(models.Model):
     price = models.DecimalField(max_digits=8, decimal_places=2)
     spice_level = models.IntegerField()
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    cuisine = models.ForeignKey(Cuisine, on_delete=models.CASCADE)
+    cuisine_type = models.ForeignKey(Cuisine, on_delete=models.CASCADE)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
 
     def __str__(self):

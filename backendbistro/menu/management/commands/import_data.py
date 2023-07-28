@@ -14,8 +14,8 @@ class Command(BaseCommand):
         for item in data:
             category_name = item.get('category')
             category, _ = Category.objects.get_or_create(name=category_name)
-            cuisine_name = item.get('cuisine', 'Default Cuisine')
-            cuisine, _ = Cuisine.objects.get_or_create(name=cuisine_name)
+            cuisine_type = item.get('cuisine_type')
+            cuisine, _ = Cuisine.objects.get_or_create(name=cuisine_type)
             location_name = item.get('location', 'Default Location')
             location, _ = Location.objects.get_or_create(name=location_name)
             spicy_level_value = item.get("spice_level")
